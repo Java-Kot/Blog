@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Provinces</title>
+</head>
+<body>
+    <a href="/create-catergory">Create new catergory</a>
+<h1>Provinces</h1>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="catergory : ${catergory}">
+        <tr>
+            <td><a th:href="@{/view-catergory/__${catergory.id}__}" th:text="${catergory.name}"></a></td>
+            <td><a th:href="@{/edit-catergory/__${catergory.id}__ }">Edit</a></td>
+            <td><a th:href="@{/delete-catergory/__${catergory.id}__ }">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
