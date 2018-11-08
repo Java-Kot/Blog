@@ -7,12 +7,12 @@
 <body>
     <h1>Edit post</h1>
     <p>
-        <a href="/posts">Post list</a>
+        <a href="/admin">Post list</a>
     </p>
     <th:block th:if="${message}">
         <p th:text="${message}"></p>
     </th:block>
-    <form th:action="@{/edit-post}" th:object="${post}" method="post">
+    <form th:action="@{/admin/edit-post}" th:object="${post}" method="post">
         <input th:type="hidden" name="id" th:field="*{id}">
         <table>
             <tr>

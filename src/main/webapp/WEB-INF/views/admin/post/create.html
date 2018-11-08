@@ -2,18 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Edit post</title>
+    <title>Create post</title>
 </head>
 <body>
-    <h1>Edit post</h1>
+    <h1>Create post</h1>
     <p>
-        <a href="/posts">Post list</a>
+        <a href="/admin/posts">Post list</a>
     </p>
     <th:block th:if="${message}">
         <p th:text="${message}"></p>
     </th:block>
-    <form th:action="@{/edit-post}" th:object="${post}" method="post">
-        <input th:type="hidden" name="id" th:field="*{id}">
+    <form th:action="@{/admin/create-post}" th:object="${post}" method="post">
         <table>
             <tr>
                 <td>Post title:</td>
@@ -26,17 +25,14 @@
             <tr>
                 <td>Catergory:</td>
                 <td>
-                    <select name="catergory">
-                        <option th:each="p : ${catergory}"
-                                th:value="${p.id}"
-                                th:text="${p.name}"
-                                th:selected="(${p.id} == *{catergory.id})"></option>
+                    <select th:field="*{catergory}">
+                        <option th:each="p : ${catergory}" th:value="${p.id}" th:text="${p.name}"></option>
                     </select>
                 </td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" value="Update post"></td>
+                <td><input type="submit" value="Create post"></td>
             </tr>
         </table>
     </form>

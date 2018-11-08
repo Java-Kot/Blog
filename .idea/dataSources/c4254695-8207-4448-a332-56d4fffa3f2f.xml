@@ -10,7 +10,7 @@
     <schema id="2" parent="1" name="blog">
       <Current>1</Current>
       <Visible>1</Visible>
-      <Collation>latin1_swedish_ci</Collation>
+      <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="cms">
       <Current>1</Current>
@@ -922,56 +922,56 @@
     </collation>
     <table id="231" parent="2" name="posts">
       <Comment>Bai viet</Comment>
+      <Collation>latin1_swedish_ci</Collation>
     </table>
-    <table id="232" parent="3" name="customers">
+    <table id="232" parent="3" name="catergory">
       <Engine>MyISAM</Engine>
     </table>
     <table id="233" parent="3" name="hibernate_sequence">
       <Engine>MyISAM</Engine>
     </table>
-    <column id="234" parent="231" name="id">
+    <table id="234" parent="3" name="posts">
+      <Engine>MyISAM</Engine>
+      <Collation>utf8_general_ci</Collation>
+    </table>
+    <column id="235" parent="231" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="231" name="title">
+    <column id="236" parent="231" name="title">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="236" parent="231" name="description">
+    <column id="237" parent="231" name="description">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="237" parent="231" name="bodytext">
+    <column id="238" parent="231" name="bodytext">
       <Position>4</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="238" parent="231" name="PRIMARY">
+    <key id="239" parent="231" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="239" parent="232" name="id">
+    <column id="240" parent="232" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="240" parent="232" name="firstname">
+    <column id="241" parent="232" name="name">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="241" parent="232" name="lastname">
-      <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -985,5 +985,35 @@
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
+    <column id="244" parent="234" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="245" parent="234" name="bodyText">
+      <Position>2</Position>
+      <DataType>mediumtext|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="246" parent="234" name="titlePost">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="247" parent="234" name="catergory_id">
+      <Position>4</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="248" parent="234" name="FK10pi4toibplt695en5oijc3d2">
+      <ColNames>catergory_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="249" parent="234" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

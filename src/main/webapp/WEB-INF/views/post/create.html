@@ -7,7 +7,7 @@
 <body>
     <h1>Create post</h1>
     <p>
-        <a href="/posts">Customer list</a>
+        <a href="/posts">Post list</a>
     </p>
     <th:block th:if="${message}">
         <p th:text="${message}"></p>
@@ -15,18 +15,18 @@
     <form th:action="@{/create-post}" th:object="${post}" method="post">
         <table>
             <tr>
-                <td>First name:</td>
+                <td>Post title:</td>
                 <td><input type="text" th:field="*{titlePost}"/></td>
             </tr>
             <tr>
-                <td>Last name:</td>
+                <td>Post text:</td>
                 <td><input type="text" th:field="*{bodyText}"/></td>
             </tr>
             <tr>
-                <td>Province:</td>
+                <td>Catergory:</td>
                 <td>
                     <select th:field="*{catergory}">
-                        <option th:each="p : ${provinces}" th:value="${p.id}" th:text="${p.name}"></option>
+                        <option th:each="p : ${catergory}" th:value="${p.id}" th:text="${p.name}"></option>
                     </select>
                 </td>
             </tr>
